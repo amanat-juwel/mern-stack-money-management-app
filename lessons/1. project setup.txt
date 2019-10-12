@@ -39,7 +39,7 @@ client/pakage.json
 "proxy": "http://localhost:4000"
 */
 
-yarn add express morgan body-parser cors mongose passport passport-jwt
+yarn add express morgan body-parser cors mongoose passport passport-jwt
 
 /*
 server.js

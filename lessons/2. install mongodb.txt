@@ -1,0 +1,18 @@
+https://www.mongodb.com/download-center/community?jmp=docs
+
+install mongodb
+
+/*
+
+const mongoose = require('mongoose')
+
+app.listen(PORT, ()=> {
+	console.log(`SERVER is RUNNING ON PORT ${PORT}`)
+	mongoose.connect('mongodb://localhost/money-management-app',
+		{ userNewUlrParser: true},
+		() =>{
+			console.log('Database Connected...')
+		})
+})
+
+/*
