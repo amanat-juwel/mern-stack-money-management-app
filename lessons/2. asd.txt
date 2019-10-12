@@ -1,0 +1,64 @@
+create folder money-management-app
+npm init -y
+
+npm i -g create-react-app
+create-react-app client
+
+create server.js file in root
+
+npm i concurrently
+
+/*
+pakage.json
+
+"main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+
+*/
+
+yarn add --dev nodemon
+
+/*
+pakage.json
+
+"main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+     "server": "nodemon server.js",
+     "client": "npm start --prefix client",
+     "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+
+*/
+
+/*
+client/pakage.json
+
+"proxy": "http://localhost:4000"
+*/
+
+yarn add express morgan body-parser cors mongose passport passport-jwt
+
+/*
+server.js
+
+const express = require('express')
+
+const app = express()
+app.get('/', (req, res) => {
+	res.json({
+		message: 'Welcome To Our Application'
+	})
+})
+
+const PORT = process.env.PORT || 4000
+app.listen(PORT, ()=> {
+	console.log('SERVER is RUNNING ON PORT ${PORT}')
+})
+*/
+
+yarn run dev
+
+
