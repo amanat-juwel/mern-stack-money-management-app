@@ -1,0 +1,13 @@
+yarn add bcrypt
+
+/* setup mongod
+
+windows key => env =>edit environment variables add path: C:\Program Files\MongoDB\Server\4.2\bin
+
+[https://stackoverflow.com/questions/15053893/mongod-command-not-recognized-when-trying-to-connect-to-a-mongodb-server]
+
+create folder C:/data/db
+
+now run 'mongod' in power shell
+
+*/
