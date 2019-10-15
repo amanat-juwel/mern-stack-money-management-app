@@ -1,0 +1,3 @@
+yarn add axios redux react-redux react-router-dom redux-thunk
+
+https://www.youtube.com/watch?v=W5cGl77CRTU&list=PL_XxuZqN0xVAvcGzTEAyPSOqgUQA08rNB
