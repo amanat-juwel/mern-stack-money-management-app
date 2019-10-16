@@ -1,5 +1,7 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { register } from "../store/actions/authActions";
 
 class Register extends React.Component {
   state = {
@@ -10,6 +12,17 @@ class Register extends React.Component {
     error: {}
   };
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (
+      JSON.stringify(nextProps.auth.error) !== JSON.stringify(prevState.error)
+    ) {
+      return {
+        error: nextProps.auth.error
+      };
+    }
+    return null;
+  }
+
   changeHandler = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -18,7 +31,11 @@ class Register extends React.Component {
 
   submitHandler = event => {
     event.preventDefault();
- 
+    let { name, email, password, confirmPassword } = this.state;
+    this.props.register(
+      { name, email, password, confirmPassword },
+      this.props.history
+    );
   };
 
   render() {
@@ -105,7 +122,13 @@ class Register extends React.Component {
       </div>
     );
   }
-
 }
 
-export default Register
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { register }
+)(Register);
