@@ -42,7 +42,7 @@ export const login = (user, history) => dispatch => {
             history.push('/')
         })
         .catch(error => {
-            console.log(error.response.data)
+            console.log(error)
             dispatch({
                 type: Types.USERS_ERROR,
                 payload: {

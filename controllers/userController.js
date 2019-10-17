@@ -33,6 +33,10 @@ module.exports = {
                         _id: user._id,
                         name: user.name,
                         email: user.email,
+                        amount: user.amount,
+                        income: user.income,
+                        expense: user.expense,
+                        transactions: user.transactions
                     }, 'SECRET', {expiresIn: '2h'})
 
                     res.status(200).json({
@@ -66,7 +70,11 @@ module.exports = {
         				let user = new User({
 	        				name,
 	        				email,
-	        				password : hash
+	        				password : hash,
+                            balance: 0,
+                            expense: 0,
+                            income: 0,
+                            transactions: []
 	        			})
 
         				user.save()
@@ -85,4 +93,12 @@ module.exports = {
             
         }
     },
+    
+    allUser(req, res) {
+        User.find()
+            .then(users => {
+                res.status(200).json(users)
+            })
+            .catch(error => serverError(res, error))
+    }
 }
